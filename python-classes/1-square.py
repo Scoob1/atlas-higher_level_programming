@@ -1,11 +1,17 @@
 #!/usr/bin/python3
 """
-Module - 0-square
-Defines an empty class Square
+Module - 1-square
+Defines a class Square with private atribute size
 """
+
 
 class Square:
     """
     Defines a square
     """
-    pass
+
+    def __init__(self, size):
+        """
+        Initializes the Square insance
+        """
+        self.__size = size

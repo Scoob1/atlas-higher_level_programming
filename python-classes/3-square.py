@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """
-Module - 2-square
-Defines a class Square with private atribute size
+Module - 3-square
+Defines a class Square with private attributte size
 """
-
 
 class Square:
     """
     Defines a square
     """
-    
+
     def __init__(self, size=0):
         """
         Initializes the Square instance
@@ -20,3 +19,9 @@ class Square:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
+
+        def area(self):
+            """
+            Computes the area of the square
+            """
+            return self.__size ** 2

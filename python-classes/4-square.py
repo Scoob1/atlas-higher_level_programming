@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" write a class square tha defines a square:"""
+
+
 class Square:
     """
     Class that defines a square with size validation, and property methods to access and update size.

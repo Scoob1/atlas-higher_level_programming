@@ -1,2 +1,4 @@
 #!/usr/bin/python3
-print("".join(chr(i) for i in range(97, 123)).format(), end="")
+
+for num in range(97, 123):
+    print("{char}".format(char=chr(num)), end="")

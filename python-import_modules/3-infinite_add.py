@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
+
+
+def inf_add(argv):
+    sum = 0
+    for i in argv[1:]:
+        sum += int(i)
+    print(sum)
+
 
 if __name__ == "__main__":
-
-    total = 0
-    
-for arg in sys.argv[1:]:
-    try:
-        total += int(arg)
-    except ValueError:
-        pass
-
-print("{}".format(total))
+    inf_add(argv)

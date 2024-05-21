@@ -9,5 +9,4 @@ class BaseGeometry:
     Defines an empty class
     """
 
-
     pass

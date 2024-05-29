@@ -4,6 +4,7 @@ Module provides a function to creae an object from JSON file.
 """
 import json
 
+
 def load_from_json_file(filename):
     """
     Creates an Object from a JSON file.

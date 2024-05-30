@@ -60,7 +60,7 @@ class Rectangle(Base):
     def y(self):
         """Y getter"""
         return self.__y
-
+    
     @y.setter
     def y(self, value):
         """Y setter"""
@@ -69,10 +69,10 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
-        def area(self):
-            """Returns area of rectangle"""
-            return self.width * self.height
+        
+    def area(self):
+        """Returns area of rectangle"""
+        return self.width * self.height
 
     def display(self):
         """Prints a rectangle in stdout using '#' character"""

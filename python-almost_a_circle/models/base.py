@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Module contains class: Base"""
+"""Module class Base"""
 import json
 import csv
 import os.path
 
 
 class Base:
-    """Class: Base"""
+    """Class Base"""
     __nb_objects = 0
 
     def __init__(self, id=None):

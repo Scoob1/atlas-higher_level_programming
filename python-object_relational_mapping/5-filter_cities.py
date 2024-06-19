@@ -1,19 +1,28 @@
 #!/usr/bin/python3
-""" Script that inserts and joins cities and states """
+""" script that takes in the name of a state as an argument
+and lists all cities of that state, using the database hbtn_0e_4_usa"""
+import sys
 import MySQLdb
-from sys import argv
-
 
 if __name__ == "__main__":
-    """ code for script """
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3])
-    cur = db.cursor()
-    cur.execute("SELECT c.id, c.name, s.name \
-                FROM cities c \
-                INNER JOIN states s \
-                on c.state_id = s.id")
-    rows = cur.fetchall()
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
+    )
 
-    for row in rows:
-        print("{}".format(row))
+    cursor = db.cursor()
+
+    cursor.execute("""SELECT cities.name FROM
+            cities INNER JOIN states ON states.id=cities.state_id
+            WHERE states.name=%s""", (sys.argv[4],))
+
+    result_cities = cursor.fetchall()
+
+    que = list(city[0] for city in result_cities)
+    print(*que, sep=", ")
+
+    cursor.close()
+    db.close()

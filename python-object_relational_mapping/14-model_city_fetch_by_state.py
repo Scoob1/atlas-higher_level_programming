@@ -3,7 +3,7 @@
 from model_state import State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_city import city
+from model_city import City
 import sys
 
 if __name__ == "__main__":

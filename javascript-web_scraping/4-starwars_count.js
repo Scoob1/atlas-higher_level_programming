@@ -2,20 +2,21 @@
 const request = require('request');
 
 const film = process.argv[2];
-const url = 'https://swapi-api.hbtn.io/api/people/';
-const characterId = '18/';
+const url = 'https://swapi-api.hbtn.io/api/films/';
+const characterId = '18';
 
-request(film, function (error, response, body) {
+request(url, function (error, response, body) {
   if (error) {
-    console.log(error);
-  } else {
-    const films = JSON.parse(body).result;
-    let count =  0;
+    console.error(error);
+    return;
+  }
+  const films = JSON.parse(body).results;
+  let count = 0
 
-    films.forEach(function (film) {
-      if (film.characters.includes(url + characterId)) {
-        count++;
-      }
-    });
+  films.forEach(function (film) {
+    if (film.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}`)) {
+      count++;
+    }
+  });
     console.log(count);
-}});
+});

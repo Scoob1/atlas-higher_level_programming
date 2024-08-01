@@ -7,6 +7,6 @@ request(url, (error, res, body) => {
   if (error) {
     console.errror(error);
   } else {
-    console.log(`code: ${res.statusCode}`):
+    console.log(`code: ${res.statusCode}`);
   }
 });
